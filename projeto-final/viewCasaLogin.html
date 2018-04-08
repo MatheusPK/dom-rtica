@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Casa Automática - Login</title>
+        <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+        <link rel="stylesheet" href="viewCasaLogin.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="viewCasaLogin.js"></script>
+    </head>
+    <body style="background-color : darkslategrey">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" style="color: white" >Dom<b>ORT</b>ica</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" style="cursor:pointer" onclick="login()">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="cursor:pointer" onclick="novaConta()">Criar conta</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div id="caixaLogin">
+            <input type="text" name="usuário" placeholder="Nome do usuário" id="txtUsuario">
+            <input type="email" name="email" placeholder="Email" id="txtEmail">
+            <input type="password" name="senha" placeholder="Senha" id="txtSenha">
+            <button type="button" class="btn btn-action" onclick="logar()" id="btnLogin">Login</button>
+            <button type="button" class="btn btn-action" onclick="criarConta()" id="btnCriarConta">Criar Conta</button>
+        </div>  
+        <div class="alert alert-success" role="alert" id="alertaSucesso" style="display:none">
+                <button onclick="apagarAlertaSucesso()" class="close"></button>
+                <strong>Sucesso!</strong>
+        </div>  
+        <div class="alert alert-danger" role="alert" id="alertaErro" style="display:none">
+                <button onclick="apagarAlertaErro()" class="close"></button>
+                <strong>Erro!</strong>
+        </div>  
+
+        <div id="caixaInformacao" style="color: white">
+                <h1><b>Sobre :</b></h1>
+                <p>
+                    sdfgggggggggggggggggggggggggggggggggggggggggg
+                    sdfgggggggggggggggggggggggggggggggggggggggggg
+                    sdfgggggggggggggggggggggggggggggggggggggggggg
+                    sdfgggggggggggggggggggggggggggggggggggggggggg
+                    sdfgggggggggggggggggggggggggggggggggggggggggg
+                    sdfgggggggggggggggggggggggggggggggggggggggggg
+                    sdfgggggggggggggggggggggggggggggggggggggggggg
+                    sdfgggggggggggggggggggggggggggggggggggggggggg
+                </p>
+        </div>
+    </body>
+</html>

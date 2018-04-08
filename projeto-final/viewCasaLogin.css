@@ -1,0 +1,62 @@
+
+#caixaInformacao {
+    position: relative;
+    bottom: 150px;
+    left: 5%;
+    width: 20%;
+}
+#caixaLogin {
+    position: relative;
+    top: 100px;
+    left: 70%;
+    height: 200px;
+    width: 20%;
+    border-radius: 25px;
+    background-color: LightSteelBlue;
+}
+    
+#txtUsuario {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    top: 10%;
+}
+
+#txtEmail {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    top: 15%;
+}
+
+#txtSenha {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    top: 20%;
+}
+
+#btnLogin {
+    position: relative;
+    top: 25%;   
+    left: 10%; 
+    display: none;
+}
+
+#btnCriarConta {
+    position: relative;
+    top: 25%; 
+    left: 10%;
+}
+
+#alertaSucesso {
+    position: absolute;
+    top: 55%;
+    left: 70%;
+}
+
+#alertaErro {
+    position: absolute;
+    top: 55%;
+    left: 70%;
+}
