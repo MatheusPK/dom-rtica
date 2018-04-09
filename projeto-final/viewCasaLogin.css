@@ -1,17 +1,12 @@
-
 #caixaInformacao {
     position: relative;
     top: 50px;
     left: 5%;
-    width: 20%;
+    width: 300px;
 }
 #caixaLogin {
-    position: relative;
-    bottom: 165px;
-    left: 70%;
     height: 200px;
-    width: 20%;
-    border-radius: 25px;
+    border-radius: 20px;
     background-color: LightSteelBlue;
 }
     
@@ -36,19 +31,6 @@
     top: 20%;
 }
 
-#btnLogin {
-    position: relative;
-    top: 25%;   
-    left: 10%; 
-    display: none;
-}
-
-#btnCriarConta {
-    position: relative;
-    top: 25%; 
-    left: 10%;
-}
-
 #alertaSucesso {
     position: absolute;
     top: 55%;
@@ -60,4 +42,16 @@
     width: 250px;
     left: 71%;
     bottom: 150px;
+}
+
+#btnLogin {
+    position: relative;
+    bottom: 15px;
+    display: none;
+}
+
+#botao {
+    position: relative;
+    left: 10%;
+    bottom: 25%;
 }
