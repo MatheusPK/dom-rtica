@@ -51,10 +51,6 @@ function criarConta(){
     promise.catch(e => $("#alertaErro").html(alertaErro).append(" " + e.message).show());
 }
 
-function sair(){
-  firebase.auth().signOut().then(e => location.href = "viewCasaLogin.html").catch(e => console.log("catch login", e.message));
-}
-
 function apagarAlertaSucesso(elemento) {
   $("#alertaSucesso").hide();
 }
