@@ -28,25 +28,35 @@ Temperatura.on('value', valor => {
     $("#Temperatura").text(valor.val());
 });
 
-function ligarLed1() {
-    firebase.database().ref("Led1").set("ligada");
+function ligarLed(elemento) {
+    dbRef = $(elemento).parent().prev().attr("id");
+    console.log(elemento);
+    firebase.database().ref(dbRef).set("ligada");
 }
 
-function desligarLed1() {
-    firebase.database().ref("Led1").set("desligada");
+function desligarLed(elemento) {
+    dbRef = $(elemento).parent().prev().attr("id");
+    firebase.database().ref(dbRef).set("desligada");
 }
 
-function ligarLed2() {
-    firebase.database().ref("Led2").set("ligada");
+function alterarFoto() {
+    var imagemURL = prompt("Insira a url da imagem que se tornará sua foto de perfil");
+    var img = '<img src="'+ imagemURL +'" />';
+    $(img).on('load', function(){
+        firebase.auth().currentUser.updateProfile({photoURL: imagemURL});
+        $(".useravatar").children().attr("src", imagemURL);
+        $(".card-background").children().attr("src", imagemURL);
+    });
+
 }
-
-function desligarLed2() {
-    firebase.database().ref("Led2").set("desligada");
-}
-
-
-
 $(function(){
-    $("#userName").text(firebase.auth().currentUser.displayName);
+    setTimeout(function(){
+        if(firebase.auth().currentUser.photoURL != null) {
+            $(".useravatar").children().attr("src", firebase.auth().currentUser.photoURL);
+            $(".card-background").children().attr("src", firebase.auth().currentUser.photoURL);
+        }
+        $("#userName").text(firebase.auth().currentUser.displayName);
+    }, 3000);
+    
 });
  
