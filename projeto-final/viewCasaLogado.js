@@ -8,6 +8,16 @@ var config = {
   };
   firebase.initializeApp(config);
 
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      if(firebase.auth().currentUser.photoURL != null) {
+        $(".useravatar").children().attr("src", firebase.auth().currentUser.photoURL);
+        $(".card-background").children().attr("src", firebase.auth().currentUser.photoURL);
+        }
+        $("#userName").text(firebase.auth().currentUser.displayName);
+    }
+  });
+
   function sair(){
     firebase.auth().signOut().then(e => location.href = "viewCasaLogin.html").catch(e => console.log("catch login", e.message));
   }
@@ -49,14 +59,4 @@ function alterarFoto() {
     });
 
 }
-$(function(){
-    setTimeout(function(){
-        if(firebase.auth().currentUser.photoURL != null) {
-            $(".useravatar").children().attr("src", firebase.auth().currentUser.photoURL);
-            $(".card-background").children().attr("src", firebase.auth().currentUser.photoURL);
-        }
-        $("#userName").text(firebase.auth().currentUser.displayName);
-    }, 3000);
-    
-});
  
