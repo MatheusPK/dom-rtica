@@ -17,7 +17,7 @@ function login(){
   $("#linkSign").html("Não tem uma conta? <a href='#' onclick='novaConta()'>Criar Conta</a>")
   $("#title").text("Logar");
   $("#botaoSubmit").text("Entrar");
-  $("#botaoSubmit").click(function(){logar()});
+  $("#botaoSubmit").attr("onclick", "logar()");
 }
 
 function novaConta() {
@@ -28,7 +28,7 @@ function novaConta() {
   $("#linkSign").html("Já tem um conta? <a href='#' onclick='login()'>Logar</a>")
   $("#title").text("Criar Conta");
   $("#botaoSubmit").text("Criar");
-  $("#botaoSubmit").click(function(){criarConta()});
+  $("#botaoSubmit").attr("onclick", "criarConta()");
 }
 
 function logar(){
@@ -41,10 +41,9 @@ function logar(){
 }
 
 function criarConta(){
-    escondeAlertas();
     const usuario = $("#txtUsuario").val();
     if(usuario === "") {
-      $("#alertaErro").html(alertaErro).append(" Insira um nome").show();
+      alert("Insira um nome")
       return;
     }
     const email = $("#txtEmail").val();
@@ -54,5 +53,6 @@ function criarConta(){
     promise.then(e => e.updateProfile({ displayName: usuario}));
     promise.then(e => alert("Conta criada"));
     promise.then(e => login());
+    promise.catch(e => alert(" " + e.message));
 }
 

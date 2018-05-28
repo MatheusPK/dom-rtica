@@ -62,3 +62,8 @@
 .signup-form form a:hover {
     text-decoration: underline;
 }
+
+#caixaLogin{
+    position: relative;
+    float: left;
+}
