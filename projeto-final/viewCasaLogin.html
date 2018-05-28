@@ -48,26 +48,30 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <form id="caixaLogin">
-                        <input type="text" name="usuário" placeholder="Nome do usuário" id="txtUsuario">
-                        <input type="email" name="email" placeholder="Email" id="txtEmail">
-                        <input type="password" name="senha" placeholder="Senha" id="txtSenha">
-                    </form>
-                    <p id="botao">
-                        <button type="button" class="btn btn-action" onclick="logar()" id="btnLogin">Login</button>
-                        <button type="button" class="btn btn-action" onclick="criarConta()" id="btnCriarConta">Criar Conta</button>
-                    </p>
-                </div>
                 <div class="col-md-2">
-                    <div class="alert alert-success" role="alert" id="alertaSucesso" style="display:none">
-                        <button onclick="apagarAlertaSucesso()" class="close"></button>
-                        <strong>Sucesso!</strong>
-                    </div>  
-                    <div class="alert alert-danger" role="alert" id="alertaErro" style="display:none">
-                        <button onclick="apagarAlertaErro()" class="close"></button>
-                        <strong>Erro!</strong>
-                    </div>  
+                    <div class="signup-form" id="caixaLogin">     
+                        <form>
+                            <h2 id="title">Criar Conta</h2>
+                            <hr>
+                            <div class="form-group">
+                                <label id="labelNome">Nome do usuário</label>
+                                <input type="text" class="form-control" name="username" required="required" id="txtUsuario">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" required="required" id="txtEmail">
+                            </div>
+                            <div class="form-group">
+                                <label>Senha</label>
+                                <input type="password" class="form-control" name="password" required="required" id="txtSenha">
+                            </div>
+                                <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block btn-lg" id="botaoSubmit">Criar</button>
+                            </div>
+                        </form>
+                        <div class="text-center" id="linkSign">Já tem um conta? <a href="#" onclick="login()">Logar</a></div>
+                    </div>
+                <div class="col-md-10"></div>
                 </div>
             </div>
         </div>
