@@ -10,7 +10,7 @@
     border-radius: 3px;
 }
 .signup-form {
-    width: 400px;
+    width: 350px;
     margin: 0 auto;
     padding: 30px 0;
 }
@@ -61,9 +61,4 @@
 }	
 .signup-form form a:hover {
     text-decoration: underline;
-}
-
-#caixaLogin{
-    position: relative;
-    float: left;
 }
