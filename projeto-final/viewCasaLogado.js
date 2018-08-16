@@ -1,37 +1,47 @@
-var config = {
+﻿var config = {
     apiKey: "AIzaSyBkPN5Uzu_TnRlXCxnO1Ac0YTz2JkicGPA",
     authDomain: "casa-automatica-86bff.firebaseapp.com",
     databaseURL: "https://casa-automatica-86bff.firebaseio.com",
     projectId: "casa-automatica-86bff",
     storageBucket: "casa-automatica-86bff.appspot.com",
     messagingSenderId: "552042836113"
-  };
-  firebase.initializeApp(config);
+};
+firebase.initializeApp(config);
 
-  firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      if(firebase.auth().currentUser.photoURL != null) {
-        $(".useravatar").children().attr("src", firebase.auth().currentUser.photoURL);
-        $(".card-background").children().attr("src", firebase.auth().currentUser.photoURL);
+        if(firebase.auth().currentUser.photoURL != null) {
+            $(".useravatar").children().attr("src", firebase.auth().currentUser.photoURL);
+            $(".card-background").children().attr("src", firebase.auth().currentUser.photoURL);
         }
         $("#userName").text(firebase.auth().currentUser.displayName);
     }
-  });
-
-  function sair(){
-    firebase.auth().signOut().then(e => location.href = "viewCasaLogin.html").catch(e => console.log("catch login", e.message));
-  }
-
-const Led1 = firebase.database().ref('Led1');
-const Led2 = firebase.database().ref('Led2');
-const Temperatura = firebase.database().ref('Temperatura');
-
-Led1.on('value', valor => {
-    $("#Led1").text(valor.val());
 });
 
-Led2.on('value', valor => {
-    $("#Led2").text(valor.val());
+function sair(){
+    firebase.auth().signOut().then(e => location.href = "index.html").catch(e => console.log("catch login", e.message));
+}
+
+const quartoLed = firebase.database().ref('quartoLed');
+const banheiroLed = firebase.database().ref('banheiroLed');
+const cozinhaLed = firebase.database().ref('cozinhaLed');
+const sala = firebase.data.database().ref('salaLed');
+const Temperatura = firebase.database().ref('Temperatura');
+
+quartoLed.on('value', valor => {
+    $("#quartoLed").text(valor.val());
+});
+
+banheiroLed.on('value', valor => {
+    $("#banheiroLed").text(valor.val());
+});
+
+cozinhaLed.on('value', valor => {
+    $("#cozinhaLed").text(valor.val());
+});
+
+salaLed.on('value', valor => {
+    $("#salaLed").text(valor.val());
 });
 
 Temperatura.on('value', valor => {
@@ -57,6 +67,5 @@ function alterarFoto() {
         $(".useravatar").children().attr("src", imagemURL);
         $(".card-background").children().attr("src", imagemURL);
     });
-
 }
  
